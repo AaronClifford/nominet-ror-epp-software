@@ -12,7 +12,8 @@ Please feel free to create "Issues" with any desired features.
 
 # Features
 
-- To Follow...
+- Ability to perform a test registration (Request) **Accepted**
+- DAC integration to check the specific list for names already registered  (Request) **Accepted**
 
 # 3Million.uk Open Letter
 
