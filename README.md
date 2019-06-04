@@ -17,3 +17,9 @@ Please feel free to create "Issues" with any desired features.
 # 3Million.uk Open Letter
 
 https://3million.uk/
+
+# Donations
+
+I don't expect anything in return for this but it's there if you are feeling generous.
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JF2S3KHUKKU5A)
