@@ -8,6 +8,8 @@ https://registrars.nominet.uk/namespace/uk/uk-rights-registration
 
 Every registrar should have access to software (in my opinion for free) to be able to attempt to register their desired names over the release period, Nominet haven't provided it's registrars with the tools so someone had to.
 
+Please feel free to create "Issues" with any desired features.
+
 # Features
 
 - To Follow...
