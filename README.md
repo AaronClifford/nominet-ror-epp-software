@@ -1,5 +1,5 @@
-# nominet-ror-epp-software
-Free Nominet Right Of Registration EPP Software
+# Free Nominet Right Of Registration EPP Software
+
 
 # What is the .uk Right Of Registration?
 https://registrars.nominet.uk/namespace/uk/uk-rights-registration
