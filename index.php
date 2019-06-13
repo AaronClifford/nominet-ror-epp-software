@@ -1,6 +1,6 @@
 <?php
 
-require 'app/bootstrap.php';
+require 'vendor/autoload.php';
 
 $config = new \App\System\Config();
 /* $dac = new App\Nominet\Dac(); */
