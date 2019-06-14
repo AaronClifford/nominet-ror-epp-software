@@ -30,7 +30,7 @@ Once this has cloned move into the directory:
 cd nominet-ror-epp-software
 ```
 
-You now need to open and edit the config file (config/Config.php), either via FTP if you have access or via command line using VIM or VI (will use vi in this example),
+You now need to open and edit the config file (config/Config.php), either via FTP if you have access or via command line using VIM or VI,
 You need to edit the following settings to create a test contact and domain:
 
 ```
