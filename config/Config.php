@@ -13,5 +13,8 @@ return [
         'testRegistrantName' => '',
         'testRegistrantOrg' => '',
         'testDomain' => '', // Must be a domain
+    ],
+    'settings' => [
+        'debug' => false
     ]
 ];
