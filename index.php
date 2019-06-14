@@ -9,6 +9,11 @@ $epp = new Epp();
 
 $config = (object)$config->data();
 
+if ($config->settings["debug"] == false)
+{
+    error_reporting(0);
+}
+
 /* Connect to DAC $dac->connect($config->dac["host"], $config->dac["port"]); */
 
 /* Connect to EPP */
