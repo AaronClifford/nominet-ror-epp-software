@@ -1,6 +1,6 @@
 # Free Nominet Right Of Registration EPP Software - Early Create Contact & Domain
 
-**I am aware of a looping issue with the EPP, I belive this is to do with a delay in time of nominet processing the addition of the IP address to the test bed, I'm currently testing this to try and resolve the issue. For now I've added error catching to this.**
+**As this is a busy time for Nominet it appears its taking a long time for IP addresses to be "activated" on the testbed, once you have added your IP please wait 1/2 hours before running the script or you may see an error.**
 
 The full release will be some time over the weekend, in the mean time I have released the script to create a contact a domain on the EPP testbed.
 I have successfully tested the contact create and domain create. As I'm keen to get this released to people as fast as I can so you can get the requirements met
