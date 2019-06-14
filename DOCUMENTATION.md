@@ -44,7 +44,13 @@ You need to edit the following settings to create a test contact and domain:
     ]
 ```
 
-Once you have edited the config you can now save the file, and from the command line run *php index.php*, this will now run the script, create the
+Once you have edited the config you can now save the file, and from the command line run: 
+
+```
+php index.php
+```
+
+This will now run the script, create the
 contact and create the test domain. All XML responses are stored in the logs folder so if you have any issues you'll be able to find them there. If
 everything goes to plan the following should output on the screen:
 
