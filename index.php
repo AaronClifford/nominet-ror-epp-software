@@ -9,7 +9,7 @@ $epp = new Epp();
 
 $config = (object)$config->data();
 
-if ($config->settings["debug"] == false)
+if (!$config->settings["debug"])
 {
     error_reporting(0);
 }
