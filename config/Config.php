@@ -8,7 +8,7 @@ return [
         'host' => 'ssl://testbed-epp.nominet.org.uk',
         'port' => '700',
         'tag' => 'YOURTAG',
-        'password' => 'EPPTESTBEDPASSWORD',
+        'password' => 'YOURPASSWORD',
         'testRegistrantID' => '', // Max 16 characters, change this every time you run the script.
         'testRegistrantName' => '',
         'testRegistrantOrg' => '',

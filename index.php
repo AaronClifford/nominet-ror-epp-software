@@ -2,9 +2,9 @@
 
 require 'app/bootstrap.php';
 
-$config = new \App\System\Config();
-/* $dac = new App\Nominet\Dac(); */
-$epp = new App\Nominet\Epp();
+$config = new Config();
+/* $dac = Dac(); */
+$epp = new Epp();
 
 $config = (object)$config->data();
 

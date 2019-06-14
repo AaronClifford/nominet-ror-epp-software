@@ -1,6 +1,5 @@
 <?php
 
-namespace App\System;
 class Domains
 {
 

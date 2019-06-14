@@ -1,7 +1,5 @@
 <?php
 
-namespace App\Nominet;
-
 class Epp
 {
 
@@ -25,7 +23,6 @@ class Epp
 
     public function login($tag, $password)
     {
-
         $loginXML = '<?xml version="1.0" encoding="UTF-8"?>
   <epp xmlns="urn:ietf:params:xml:ns:epp-1.0"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -56,7 +53,6 @@ class Epp
 
     function createContact($registrant, $name, $org)
     {
-
         $createContactXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <epp xmlns=\"urn:ietf:params:xml:ns:epp-1.0\"
     xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
@@ -96,7 +92,6 @@ class Epp
 
     function createDomain($domain, $password)
     {
-
         $registrant = file_get_contents('REGISTRANT');
 
         $createDomainXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
@@ -174,11 +169,9 @@ class Epp
 
     public function logs($msg, $file)
     {
-        // Set Date & Time For logss
         $date = date("d-m-y");
         $time = $this->udate('H:i:s.u');
 
-        // Write logs File
         $f = fopen("logs/" . $date . "-" . $file . ".txt", 'a');
 
         fputs($f, trim($time) . ",{$msg}\n");

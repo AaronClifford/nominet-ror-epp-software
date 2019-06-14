@@ -1,7 +1,5 @@
 <?php
 
-namespace App\Nominet;
-
 class Dac
 {
 
