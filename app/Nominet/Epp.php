@@ -14,6 +14,12 @@ class Epp
         $flags = STREAM_CLIENT_CONNECT;
 
         $this->connection = stream_socket_client($address . ':' . $port, $errno, $errstr, $timeout, $flags, $context);
+        
+        if ($this->connection == FALSE)
+        {
+        exit("Message: Script failed, likely cause is the recent addition of the IP address to the Nominet test bed due to
+        the large amount of people currently setting up. Please try running the script in 60 minutes time again.");
+        }
 
         stream_set_blocking($this->connection, (int)false);
         stream_set_write_buffer($this->connection, 0);
