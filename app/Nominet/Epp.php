@@ -17,8 +17,7 @@ class Epp
         
         if ($this->connection == FALSE)
         {
-        exit("Message: Script failed, likely cause is the recent addition of the IP address to the Nominet test bed due to
-        the large amount of people currently setting up. Please try running the script in 60 minutes time again.");
+        exit("Message: Script failed, likely cause is the recent addition of the IP address to the Nominet test bed due to the large amount of people currently setting up. Please try running the script in 60 minutes time again.\r\n");
         }
 
         stream_set_blocking($this->connection, (int)false);
