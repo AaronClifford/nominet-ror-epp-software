@@ -1,6 +1,6 @@
 # Free Nominet Right Of Registration EPP Software - Early Create Contact & Domain
 
-**I am aware of a looping issue with the EPP, I belive this is to do with a delay in time of nominet processing the addition of the IP address to the test bed, I'm currently testing this to try and resolve the issue.**
+**I am aware of a looping issue with the EPP, I belive this is to do with a delay in time of nominet processing the addition of the IP address to the test bed, I'm currently testing this to try and resolve the issue. For now I've added error catching to this. **
 
 The full release will be some time over the weekend, in the mean time I have released the script to create a contact a domain on the EPP testbed.
 I have successfully tested the contact create and domain create. As I'm keen to get this released to people as fast as I can so you can get the requirements met
@@ -10,14 +10,15 @@ Any questions open an issue here and I'll be happy to help.
 
 # Installation 
 
+This installation presumes you are running on a linux server with php installed, I'd suggest spinning up a Droplet at DigitalOcean (London based, size not really important) https://m.do.co/c/c195ffdba437 (Referal Link). 
+
 The only files you really need to access are the config/Config.php and the logs folder, everything else you should leave as is for the time being.
 
 You will need to add an IP address and password to the web domain manager in your Nominet account online (and add them to the config).
 
 On your server, preferably the one you use for drop catching currently, perform the following command (somewhere on your server you can remember):
 
-If you don't have git installed please follow: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git, or simply download the zip files 
-and upload them to your server.
+If you don't have git installed please follow: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git, or simply download the zip files and upload them to your server.
 
 ```
 git clone git@github.com:AaronClifford/nominet-ror-epp-software.git
