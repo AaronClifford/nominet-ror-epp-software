@@ -27,6 +27,12 @@ Once this has cloned move into the directory:
 cd nominet-ror-epp-software
 ```
 
+And run the following: (https://getcomposer.org/doc/00-intro.md to install composer)
+
+```
+composer install 
+```
+
 You now need to open and edit the config file (config/Config.php), either via FTP if you have access or via command line using VIM or VI (will use vi in this example),
 You need to edit the following settings to create a test contact and domain:
 

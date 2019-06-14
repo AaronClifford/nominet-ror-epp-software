@@ -1,6 +1,6 @@
 <?php
 
-require 'app/bootstrap.php';
+require 'vendor/autoload.php';
 
 $config = new Config();
 /* $dac = Dac(); */
