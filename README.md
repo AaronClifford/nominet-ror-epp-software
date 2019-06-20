@@ -19,6 +19,7 @@ Please feel free to create "Issues" with any desired features prior to release
 
 - Ability to change the amount of requests
 - Better logging
+- cron configuration
 
 # Testing
 
