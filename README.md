@@ -13,14 +13,16 @@ Please be aware, I make no promises this is going to be successful for you, but 
 
 Every registrar should have access to software (in my opinion for free) to be able to attempt to register their desired names over the release period, Nominet haven't provided it's registrars with the tools so someone had to.
 
-Please feel free to create "Issues" with any desired features.
+Please feel free to create "Issues" with any desired features prior to release
 
-# Features
-- Ability to perform a test contact create **DONE**
-- Ability to perform a test registration **DONE**
-- DAC integration to check the specific list for names already registered (before the hour) (Request) **Accepted**
-- Script will run on a cron and connect before the hour hits (this is for you to control and check times on).
-- On the hour, you can specfiy how many epp requests to send and with a time delay between them.
+# Potential features pre launch
+
+- Ability to change the amount of requests
+- Better logging
+
+# Testing
+
+This can be tested at any time by loading an obscure list of .uk domains that aren't registered, it will run as expected on the minute after you start the script.
 
 # 3Million.uk Open Letter
 

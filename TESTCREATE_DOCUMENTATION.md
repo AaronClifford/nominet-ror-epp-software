@@ -47,7 +47,7 @@ You need to edit the following settings to create a test contact and domain:
 Once you have edited the config you can now save the file, and from the command line run: 
 
 ```
-php index.php
+php testCreate.php
 ```
 
 This will now run the script, create the
