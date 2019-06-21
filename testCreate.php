@@ -33,7 +33,7 @@ if (!file_exists("REGISTRANT")) {
 
     echo "MESSAGE: Contact Created Successfully\r\n";
 
-    if (!$epp->createDomain($config->epp["testDomain"], $config->epp["password"], $config->epp["test|RegistrantID"])) {
+    if (!$epp->createDomain($config->epp["testDomain"], $config->epp["password"], $config->epp["testRegistrantID"])) {
         echo "Error creating domain name, please review the lastest log file.";
         unlink("REGISTRANT");
         exit();
