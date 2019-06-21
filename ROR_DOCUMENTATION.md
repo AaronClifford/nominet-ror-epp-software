@@ -42,6 +42,13 @@ You need to edit the following settings to create a test contact and domain:
     ]
 ```
 
+Then made sure you have uploaded your domain list to the domains folder in the following format, one per line, no blank lines:
+
+```
+DD-MM-YY.txt
+Example 21-06-19.txt
+```
+
 Once you have edited the config you can now save the file, and from the command line run: 
 
 ```
