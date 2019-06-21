@@ -1,6 +1,8 @@
 # Free Nominet Right Of Registration EPP Software - RoR Script
 
-Any questions open an issue here and I'll be happy to help.
+Any questions open an issue here and I'll be happy to help, via aclifforda@gmail.com or the issues tab.
+
+Make sure your server/php time is correct (NTP time) to ensure you run the script at the correct time.
 
 This script also uses the testbed dac, when running in production you will be required to set the live DAC and RoR epp settings as follows:
 
