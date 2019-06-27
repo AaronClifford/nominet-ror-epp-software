@@ -10,7 +10,7 @@ class Epp
     {
         $timeout = @ini_get('default_socket_timeout');
         $flags = null;
-        $options = null;
+        $options = ['ssl' => ['verify_peer_name' => false]];
         $context = stream_context_create($options);
         $flags = STREAM_CLIENT_CONNECT;
 
@@ -126,14 +126,14 @@ class Epp
     }
 
     // Multi domain create, with minute based sleeping
-    function multiCreate($domains, $password, $registrant, $min)
+    function multiCreate($domains, $password, $registrant, $min, $createRequests)
     {
         $createDomainsXML = null;
 
-        if (count($domains) < 6) {
+        if (count($domains) < $createRequests) {
             $value = count($domains);
 
-            while ($value != 6) {
+            while ($value < $createRequests) {
                 $domains[] = $domains[0];
                 $value++;
             }
@@ -184,29 +184,33 @@ class Epp
         echo "Next Run: 2019-06-" . date("d") . " {$hour}:{$min}:00.000\r\n";
 
         // Calculate the time now and the time to the start of the next minute
-        $start_date = new DateTime(date("Y") . "-" . date("m") . "-" . date("d") . " {$hour}:{$min}:00.000");
+        $start_date = new DateTime("2019-06-" . date("d") . " {$hour}:{$min}:00.000");
         $t = microtime(true);
         $micro = sprintf("%06d", ($t - floor($t)) * 1000000);
         $now_time = new DateTime(date('Y-m-d H:i:s.' . $micro, $t));
 
         // Calculate how long to sleep for
         $sleep = number_format(abs((float)$now_time->format("U.u") - (float)$start_date->format("U.u")), 6) * 100;
-
-
         $sleep = str_replace(".", "", $sleep);
+
+        // Fix short sleep times
+        while (strlen($sleep) < 8) {
+            $sleep = $sleep . "0";
+        }
+
         $sleep = intval($sleep);
+
         usleep($sleep);
 
-        // Send EPP requests
-        fputs($this->connection, $createDomainXML[0], strlen($createDomainXML[0]));
-        fputs($this->connection, $createDomainXML[1], strlen($createDomainXML[1]));
-        fputs($this->connection, $createDomainXML[2], strlen($createDomainXML[2]));
-        fputs($this->connection, $createDomainXML[3], strlen($createDomainXML[3]));
-        fputs($this->connection, $createDomainXML[4], strlen($createDomainXML[4]));
-        fputs($this->connection, $createDomainXML[5], strlen($createDomainXML[5]));
+        $requestCounts = 0;
+
+        while ($requestCounts < $createRequests) {
+            fputs($this->connection, $createDomainXML[$requestCounts], strlen($createDomainXML[$requestCounts]));
+            $requestCounts++;
+        }
 
         // Read EPP responses to log and return to the minute based loop.
-        $this->readEPP($this->connection);
+        $this->readEPP($this->connection, $requestCounts);
 
         return;
     }
@@ -232,7 +236,7 @@ class Epp
     }
 
     // Read EPP responses
-    public function readEPP($connection)
+    public function readEPP($connection, $requestCounts = 6)
     {
         $buffer = null;
         $time_pre = microtime(true);
@@ -242,7 +246,7 @@ class Epp
             $time_post = microtime(true);
             $end_time = $time_post - $time_pre;
 
-            if ($end_time > 5) {
+            if ($end_time > (0.5 * $requestCounts)) {
                 break;
             }
         }

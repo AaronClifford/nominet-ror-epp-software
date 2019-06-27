@@ -32,17 +32,17 @@ $min = null;
 
 while (1) {
 
+    if ($loop > 0) {
+        // Check domain list
+        $domains = $dac->checkDomains($domains, $config->epp["tag"], $config->dac["host"], $config->dac["port"], $loop);
+    }
+
     // Get the next minute, if on the 59th minute set to 0
     if ($loop == 0) {
        $min = intval(date("i") + 1);
     }
     if ($min > 59) {
         $min = 0;
-    }
-
-    if ($loop > 0) {
-        // Check domain list
-        $domains = $dac->checkDomains($domains, $config->epp["tag"], $config->dac["host"], $config->dac["port"], $loop);
     }
 
 // Exit if domain list empty.
@@ -52,7 +52,7 @@ while (1) {
     }
 
 // Start the domain create process
-    $epp->multiCreate($domains, $config->epp["password"], $config->epp["liveRegistrantID"], $min);
+    $epp->multiCreate($domains, $config->epp["password"], $config->epp["liveRegistrantID"], $min,$config->epp["create_requests"]);
 
     $loop++;
     $min++;

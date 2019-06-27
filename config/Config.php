@@ -15,7 +15,7 @@ return array(
             'testRegistrantName' => '',
             'testRegistrantOrg' => '',
             'testDomain' => '', // Must be a domain on the ROR list to successfully complete the Nominet requirements
-            'create_requests' => 6), // not functional, code changes needed to support more than six requests.
+            'create_requests' => 6), // Only tested on a low amount of queries, modification will be required for anymore.
 
     'settings' =>
         array('debug' => true)

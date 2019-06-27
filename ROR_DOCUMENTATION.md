@@ -1,6 +1,8 @@
 # Free Nominet Right Of Registration EPP Software - RoR Script
 
-Any questions open an issue here and I'll be happy to help.
+Any questions open an issue here and I'll be happy to help, via aclifforda@gmail.com or the issues tab.
+
+Make sure your server/php time is correct (NTP time) to ensure you run the script at the correct time.
 
 This script also uses the testbed dac, when running in production you will be required to set the live DAC and RoR epp settings as follows:
 
@@ -38,6 +40,13 @@ You need to edit the following settings to create a test contact and domain:
         'password' => 'EPPTESTBEDPASSWORD', // Enter the testbed EPP password you set
         'liveRegistrantID' => 'LIVEREGID', // enter your live registration ID, or for testing the one you created with the test create.
     ]
+```
+
+Then made sure you have uploaded your domain list to the domains folder in the following format, one per line, no blank lines:
+
+```
+DD-MM-YY.txt
+Example 21-06-19.txt
 ```
 
 Once you have edited the config you can now save the file, and from the command line run: 

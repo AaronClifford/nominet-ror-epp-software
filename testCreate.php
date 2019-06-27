@@ -10,8 +10,7 @@ $epp = new Epp();
 $config = (object)$config->data();
 
 // Debug mode (
-if (!$config->settings["debug"])
-{
+if (!$config->settings["debug"]) {
     error_reporting(0);
 }
 
@@ -34,7 +33,7 @@ if (!file_exists("REGISTRANT")) {
 
     echo "MESSAGE: Contact Created Successfully\r\n";
 
-    if (!$epp->createDomain($config->epp["testDomain"], $config->epp["password"],)) {
+    if (!$epp->createDomain($config->epp["testDomain"], $config->epp["password"], $config->epp["testRegistrantID"])) {
         echo "Error creating domain name, please review the lastest log file.";
         unlink("REGISTRANT");
         exit();
@@ -42,7 +41,6 @@ if (!file_exists("REGISTRANT")) {
 
     echo "MESSAGE: Domain {$config->epp["testDomain"]} Created Successfully\r\n";
 
-}
-else {
+} else {
     echo "MESSAGE: Exiting, nothing to do.";
 }
