@@ -36,6 +36,12 @@ while (1) {
         // Check domain list
         $domains = $dac->checkDomains($domains, $config->epp["tag"], $config->dac["host"], $config->dac["port"], $loop);
     }
+    
+    // Exit if domain list empty.
+    if (empty($domains)) {
+        echo "MESSAGE: Domain List Empty, Exiting\r\n";
+        exit();
+    }
 
     // Get the next minute, if on the 59th minute set to 0
     if ($loop == 0) {
@@ -43,12 +49,6 @@ while (1) {
     }
     if ($min > 59) {
         $min = 0;
-    }
-
-// Exit if domain list empty.
-    if (empty($domains)) {
-        echo "MESSAGE: Domain List Empty, Exiting\r\n";
-        exit();
     }
 
 // Start the domain create process
