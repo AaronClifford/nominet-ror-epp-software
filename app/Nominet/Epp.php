@@ -10,7 +10,7 @@ class Epp
     {
         $timeout = @ini_get('default_socket_timeout');
         $flags = null;
-        $options = null;
+        $options = ['ssl' => ['verify_peer_name' => false]];
         $context = stream_context_create($options);
         $flags = STREAM_CLIENT_CONNECT;
 
