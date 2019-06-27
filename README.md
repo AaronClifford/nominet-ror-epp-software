@@ -21,6 +21,8 @@ Please feel free to create "Issues" with any desired features prior to release
 
 This can be tested at any time by loading an obscure list of .uk domains that aren't registered, it will run as expected on the minute after you start the script.
 
+PHP 7 is required for this script to run.
+
 # 3Million.uk Open Letter
 
 https://3million.uk/
