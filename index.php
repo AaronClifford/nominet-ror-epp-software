@@ -38,7 +38,7 @@ while (1) {
     }
     
     // Exit if domain list empty.
-    if (empty($domains)) {
+    if (empty($domains) OR $domains[0] == null) {
         echo "MESSAGE: Domain List Empty, Exiting\r\n";
         exit();
     }
