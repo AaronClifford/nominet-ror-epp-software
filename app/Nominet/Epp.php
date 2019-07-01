@@ -181,10 +181,10 @@ class Epp
             $hour = "0" . $hour;
         }
 
-        echo "Next Run: 2019-06-" . date("d") . " {$hour}:{$min}:00.000\r\n";
+        echo "Next Run: 2019-07-" . date("d") . " {$hour}:{$min}:00.000\r\n";
 
         // Calculate the time now and the time to the start of the next minute
-        $start_date = new DateTime("2019-06-" . date("d") . " {$hour}:{$min}:00.000");
+        $start_date = new DateTime("2019-07-" . date("d") . " {$hour}:{$min}:00.000");
         $t = microtime(true);
         $micro = sprintf("%06d", ($t - floor($t)) * 1000000);
         $now_time = new DateTime(date('Y-m-d H:i:s.' . $micro, $t));
