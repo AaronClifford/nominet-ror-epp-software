@@ -112,6 +112,7 @@ class Epp
          xsi:schemaLocation=\"urn:ietf:params:xml:ns:domain-1.0
          domain-1.0.xsd\">
          <domain:name>" . $domain . "</domain:name>
+         <domain:period unit=\"y\">1</domain:period>
          <domain:registrant>" . $registrant . "</domain:registrant>
          <domain:authInfo>
            <domain:pw>$password</domain:pw>
@@ -153,6 +154,7 @@ class Epp
          xsi:schemaLocation=\"urn:ietf:params:xml:ns:domain-1.0
          domain-1.0.xsd\">
          <domain:name>" . $domain . "</domain:name>
+         <domain:period unit=\"y\">1</domain:period>
          <domain:registrant>" . $registrant . "</domain:registrant>
          <domain:authInfo>
            <domain:pw>$password</domain:pw>
